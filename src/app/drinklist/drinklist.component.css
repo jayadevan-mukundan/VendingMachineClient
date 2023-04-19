@@ -1,0 +1,120 @@
+.machineCanvas {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 97vh;
+}
+
+.vendingstage {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    margin: 20px 5px;
+    box-shadow: 12px 7px 20px rgb(77 76 76 / 93%);
+}
+
+.drinkImage {
+    width: 100px;
+    height: 180px;
+    padding: 15px;
+}
+
+.numberCircle {
+    border-radius: 50%;
+    width: 60px;
+    height: 35px;
+    background: #fff;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+    font: 24px Arial, sans-serif;
+    padding: 2px;
+    margin: 15px;
+    float: left;
+}
+
+.coinCircle {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    background: #fff;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+    font: 24px Arial, sans-serif;
+    padding: 20px;
+    margin: 10px;
+}
+
+.priceDisplay {
+    font: 18px Arial, sans-serif;
+    margin: auto;
+    padding: 10px;
+}
+
+.drinkDetail {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 8px 0px;
+    box-shadow: 2px 7px 20px rgb(77 76 76 / 93%);
+}
+
+.drinkInfo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+
+.paymentStage {
+    width: 20%;
+    height: 100%;
+    background-color: white;
+    margin: 20px 5px;
+    box-shadow: 12px 7px 20px rgb(77 76 76 / 93%);
+}
+
+.cashPayment {
+    display: flex;
+    padding: 10px 0px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* align-content: center; */
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+
+.stepHeader {
+    width: 100%;
+    height: 50px;
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    font: 24px Arial, sans-serif;
+}
+
+.messageBoard {
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    color: red;
+    padding: 10px;
+    font: 18px Arial, sans-serif;
+    text-align: center;
+}
+
+.paymentSummary {
+    padding: 5px;
+    width: 300px;
+    height:auto;
+    background-color: white;
+    margin: 20px 5px;
+    box-shadow: 12px 7px 20px rgb(77 76 76 / 93%);
+}

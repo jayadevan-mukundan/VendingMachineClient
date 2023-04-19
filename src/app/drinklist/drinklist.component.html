@@ -1,0 +1,69 @@
+<div class="machineCanvas">
+    <div class="vendingstage">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" *ngFor="let item of items">
+                    <div class="drinkDetail">
+                        <div>
+                            <img src="../../assets/Images/{{item.imageUrl}}" class="drinkImage">
+                        </div>
+                        <div class="drinkInfo">
+                            <h5 style="text-align: center;">{{ item.name }} </h5>
+                            <div class="numberCircle">#{{ item.number }}</div>
+                            <div class="priceDisplay">Price: {{ item.price | currency: 'USD'}}</div>
+                            <div>Remaining: {{ item.remaining }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="paymentStage">
+        <div class="messageBoard">{{ infoMessage }}</div>
+        <div class="stepHeader"> Step 1 : Choose a Can</div>
+        <div class="input-group mb-3" style="padding: 10px;">
+            <span class="input-group-text" id="basic-addon3">Can #</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                [(ngModel)]="selectedCan">
+        </div>
+        <div class="container" style="width: 250px;padding-top: 10px; padding-bottom: 10px;">
+            <div class="row justify-content-center">
+                <div class="col-md-4" *ngFor="let num of numbers" style="padding: 5px;">
+                    <button type="button" class="btn btn-primary btn-lg" (click)="numberClick( num )">&nbsp;&nbsp;{{ num
+                        }}&nbsp;&nbsp;</button>
+                </div>
+            </div>
+            <div class="row justify-content-evenly">
+                <div class="col-md-4" style="padding: 5px;">
+                    <button type="button" class="btn btn-danger btn-lg" (click) = "onCancelClick()">Cancel</button>
+                </div>
+                <div class="col-md-4" style="padding: 5px;">
+                    <button type="button" class="btn btn-success btn-lg" (click) = "onCanNumberEnter()">Enter</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="stepHeader"> Step 2 : Make payment by card</div>
+        <div style="text-align: center; padding: 10px;" (click) = "oncardPayment()">
+            <img src="../../assets/Images/tap-to-pay.jpg" width="100px" height="100px" style="cursor: pointer;">
+        </div>
+        <div class="stepHeader"> Or : Make payment by cash</div>
+        <div class="cashPayment">
+            <div class="coinCircle" (click) = "onCashInsert(1)">$1</div>
+            <div class="coinCircle" (click) = "onCashInsert(2)">$2</div>
+            <div class="coinCircle" (click) = "onCashInsert(5)">$5</div>
+            <div class="coinCircle" (click) = "onCashInsert(10)">$10</div>
+        </div>
+
+        <div class="stepHeader"> Step 3 : Collect your Can</div>
+    </div>
+    <div class="paymentSummary">
+        <div><h5>Total cans sold : {{totalCansSold}} </h5></div>
+        <div><h5>Total card payment : {{totalCardPayment | currency: 'USD'}}</h5></div>
+        <div><h5>Total cash payment : {{totalCashPayment | currency: 'USD'}}</h5></div>
+        <div><h5>Total change returned : {{totalCashReturned | currency: 'USD'}}</h5></div>
+        <div class="col-md-3" style="padding: 5px; width: 100%; text-align: center;">
+            <button type="button" class="btn btn-success btn-lg" (click) = "onReStock()">Restock</button>
+        </div>
+    </div>
+</div>
